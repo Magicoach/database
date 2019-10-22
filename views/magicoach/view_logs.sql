@@ -1,0 +1,2 @@
+USE magicoach;
+ CREATE VIEW view_logs AS select `magicoach`.`3_users`.`username` AS `username`,`magicoach`.`3_users`.`email` AS `email`,`magicoach`.`3_users`.`ID` AS `ID`,`magicoach`.`5_logs`.`date` AS `date`,`magicoach`.`5_logs_description`.`description` AS `description` from ((`magicoach`.`5_logs` join `magicoach`.`5_logs_description` on((`magicoach`.`5_logs`.`id_event` = `magicoach`.`5_logs_description`.`id_event`))) join `magicoach`.`3_users` on((`magicoach`.`5_logs`.`id_user` = `magicoach`.`3_users`.`ID`)))

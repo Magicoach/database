@@ -1,0 +1,2 @@
+USE magicoach;
+ CREATE VIEW view_users_by_month AS select count(distinct `magicoach`.`5_logs`.`id_user`) AS `expr1`,month(`magicoach`.`5_logs`.`date`) AS `expr2` from `magicoach`.`5_logs` group by month(`magicoach`.`5_logs`.`date`)

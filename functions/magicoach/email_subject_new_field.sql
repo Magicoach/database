@@ -1,0 +1,8 @@
+DELIMITER $$
+CREATE FUNCTION `email_subject_new_field`() RETURNS text CHARSET utf8 
+ SQL SECURITY DEFINER 
+ CONTAINS SQL 
+BEGIN
+RETURN 'New Match in Unknown Field';
+END $$
+DELIMITER ;

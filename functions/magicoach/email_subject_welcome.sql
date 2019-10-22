@@ -1,0 +1,8 @@
+DELIMITER $$
+CREATE FUNCTION `email_subject_welcome`() RETURNS text CHARSET utf8 
+ SQL SECURITY DEFINER 
+ CONTAINS SQL 
+BEGIN
+  RETURN 'Welcome to Magicoach';
+END $$
+DELIMITER ;

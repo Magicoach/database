@@ -1,0 +1,20 @@
+DELIMITER $$
+CREATE PROCEDURE `block_user`(IN id_user int) 
+ SQL SECURITY DEFINER  CONTAINS SQL BEGIN
+
+  DECLARE EXIT HANDLER FOR SQLEXCEPTION, SQLWARNING
+  BEGIN
+    ROLLBACK;
+    SELECT '1' AS 'return';
+  END;
+  START TRANSACTION;
+
+    UPDATE `3_users` u
+    SET u.active = 0
+    WHERE u.ID = id_user;
+
+    SELECT '0' AS 'return';
+
+  COMMIT;
+END $$
+DELIMITER ;
